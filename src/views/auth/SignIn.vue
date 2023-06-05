@@ -10,7 +10,7 @@ const appStore = useAppStore()
 const userStore = useUserStore()
 const formRef = ref(null)
 const model = ref({
-	email: null,
+	email: 'admin@email.com',
 	password: null
 })
 const rules = {
@@ -40,6 +40,7 @@ const onSignIn = (e) => {
 				email: model.value.email,
 				password: model.value.password
 			})
+			console.log(res)
 			successSignIn(res)
 		}
 	})
@@ -84,16 +85,16 @@ const successSignIn = (res) => {
 				>로그인</n-button
 			>
 			<n-divider />
-<!--			<GoogleLogin :callback="googleSignInCallback" style="width: 100%">-->
-<!--				<n-button size="large" style="width: 100%">-->
-<!--					<template #icon>-->
-<!--						<n-icon>-->
-<!--							<google-icon />-->
-<!--						</n-icon>-->
-<!--					</template>-->
-<!--					with Google-->
-<!--				</n-button>-->
-<!--			</GoogleLogin>-->
+			<!--			<GoogleLogin :callback="googleSignInCallback" style="width: 100%">-->
+			<!--				<n-button size="large" style="width: 100%">-->
+			<!--					<template #icon>-->
+			<!--						<n-icon>-->
+			<!--							<google-icon />-->
+			<!--						</n-icon>-->
+			<!--					</template>-->
+			<!--					with Google-->
+			<!--				</n-button>-->
+			<!--			</GoogleLogin>-->
 		</n-form>
 	</div>
 </template>
